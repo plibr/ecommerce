@@ -1,4 +1,5 @@
 {
+    "NOD_ENV":"production",
     "dbURI": "mongodb+srv://ecommerce:ecommerce@ecommerce.1s9uc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     "jwtsecret": "RP7ORFrmpEGpNqZQNrTNHQ",
     "StripeAPIKey": "pk_test_51JBbEHBhydgMPy6qXCKgxv0fhrYwSobugmQ1bcHXKbeHmXM8A1Zv6jByi6TKC67Ax9BHXsp50kSwrT6tjMiyRy1y008G0mKkkM"
