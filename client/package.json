@@ -20,12 +20,12 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=4005 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://127.0.0.1:4000",
+  "proxy": "http://localhost:4004/",
   "eslintConfig": {
     "extends": [
       "react-app",

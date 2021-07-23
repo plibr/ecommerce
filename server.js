@@ -26,7 +26,7 @@ if(process.env.NODE_ENV === 'production') {
 
 // connecting to mongoDB and then running server on port 4000
 const dbURI = config.get('dbURI');
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4004;
 const HOST = "localhost";
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
   .then((result) => app.listen(port, HOST, () => {
