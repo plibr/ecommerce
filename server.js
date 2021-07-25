@@ -22,9 +22,13 @@ if(process.env.NODE_ENV === 'production') {
     app.get('*', (req, res) => {
       res.sendFile(path.resolve(__dirname,'client','build','index.html'));
     });
+}else{
+  app.get('/', (req, res) => {
+      res.send("Api is running");
+  })
 }
 
-// connecting to mongoDB and then running server on port 4000
+// connecting to mongoDB and then running server on port 4004
 const dbURI = config.get('dbURI');
 const port = process.env.PORT || 4004;
 const HOST = "localhost";
