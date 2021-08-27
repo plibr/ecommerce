@@ -4,7 +4,6 @@ import {Card, CardText, CardBody, CardTitle, CardSubtitle, Button, Alert, Contai
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCart, deleteFromCart } from '../actions/cartActions';
-import Checkout from './Checkout';
 import { checkout } from '../actions/orderActions';
 
 class Cart extends Component {
@@ -32,6 +31,9 @@ class Cart extends Component {
         this.props.deleteFromCart(id, itemId);
     } 
 
+    onCheckout = (id) => {
+        this.props.checkout(id);
+    }
     render(){
         const user = this.props.user;
         if(this.props.isAuthenticated && !this.props.cart.loading && !this.state.loaded){
@@ -58,7 +60,7 @@ class Cart extends Component {
                         <Card>
                             <CardBody>
                                 <CardTitle tag="h5">{item.name}</CardTitle>
-                                <CardSubtitle tag="h6">Rs. {item.price}</CardSubtitle>
+                                <CardSubtitle tag="h6">$ {item.price}</CardSubtitle>
                                 <CardText>Quantity - {item.quantity}</CardText>
                                 <Button color="danger" onClick={this.onDeleteFromCart.bind(this, user._id, item.productId)}>Delete</Button>
                             </CardBody>
@@ -66,15 +68,16 @@ class Cart extends Component {
                         <br/>
                         </div>
                         ))}
-                        <div class="col-md-12">
+                        <div className="col-md-12">
                         <Card>
                             <CardBody>
-                                <CardTitle tag="h5">Total Cost = Rs. {this.props.cart.cart.bill}</CardTitle>
-                                <Checkout
+                                <CardTitle tag="h5">Total Cost = $ {this.props.cart.cart.bill}</CardTitle>
+                                {/* <Checkout
                                     user={user._id}
                                     amount={this.props.cart.cart.bill}
                                     checkout={this.props.checkout}
-                                />                   
+                                />                    */}
+                                <Button color="primary" onClick={this.onCheckout.bind(this, user._id)}>Order</Button>
                             </CardBody>
                         </Card>
                         </div>

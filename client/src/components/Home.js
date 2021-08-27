@@ -34,11 +34,11 @@ class Home extends Component {
             <Container>
                 <div className="row">
                 {items.map((item)=>(
-                    <div className="col-md-4">
+                    <div className="col-md-4" key={item._id.toString()}>
                     <Card className="mb-4">
                         <CardBody>
                             <CardTitle tag="h5">{item.title}</CardTitle>
-                            <CardSubtitle tag="h6">Rs. {item.price}</CardSubtitle>
+                            <CardSubtitle tag="h6">$ {item.price}</CardSubtitle>
                             <CardText>{item.category}</CardText>
                             {this.props.isAuthenticated ? 
                                 <Button

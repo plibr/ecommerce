@@ -42,7 +42,7 @@ class AddItem extends Component {
                 <AppNavbar/>
                 <Container>
                     <h2 className="text-center mb-3">Add a new Item</h2>
-                    { !this.props.isAuthenticated ?
+                    { this.props.isAuthenticated ?
                     <Form onSubmit={this.onSubmit}>
                         <FormGroup>
                             <Label for="title">Title</Label>
